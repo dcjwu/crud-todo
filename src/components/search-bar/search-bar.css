@@ -1,0 +1,14 @@
+.search {
+    margin-bottom: 2rem;
+    padding: 0 1.5rem;
+    height: 4.5rem;
+    width: 60%;
+    border: none;
+    font-family: inherit;
+    border-radius: 1.4rem;
+    background-color: #d7d7d7;
+}
+
+.search::placeholder {
+    color: #838383;
+}
