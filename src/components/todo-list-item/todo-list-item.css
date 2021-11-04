@@ -7,7 +7,7 @@
     justify-content: space-between;
     border-radius: 2rem;
     background-color: rgba(227, 227, 227, 0.63);
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .todo-list-item.completed {
@@ -21,6 +21,23 @@
 
 .todo-list-item.completed .todo-list-btn:hover {
     background-color: #e3e3e3;
+}
+
+.todo-list-item.completed .todo-text {
+    color: #dedede;
+}
+
+.todo-text {
+    padding: 1rem;
+    width: 60%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.todo-text:focus {
+    border-bottom: 1px solid #000000;
+    color: #838383;
 }
 
 .todo-list-btn {

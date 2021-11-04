@@ -15,7 +15,8 @@ class App extends Component {
                 {text: 'Try to understand setState.', completed: false, id: 2},
                 {text: 'Sleep 8h.', completed: false, id: 3},
             ],
-            filter: 'all'
+            filter: 'all',
+            search: ''
         }
         this.maxId = 4
     }
@@ -67,16 +68,28 @@ class App extends Component {
         this.setState(({filter}))
     }
 
+    searchTodo = (items, search) => {
+        if (search.length === 0) return items
+
+        return items.filter(item => {
+            return item.text.indexOf(search) > -1
+        })
+    }
+
+    onUpdateSearch = (search) => {
+        this.setState({search})
+    }
+
     render() {
 
-        const {data, filter} = this.state
-        const visibleData = this.filterPost(data, filter)
+        const {data, filter, search} = this.state
+        const visibleData = this.filterPost(this.searchTodo(data, search), filter)
 
         return (
             <div className='app'>
                 <Nav/>
                 <div className='container center'>
-                    <SearchBar/>
+                    <SearchBar onUpdateSearch={this.onUpdateSearch}/>
                     <FilterBar
                         data={data}
                         filter={filter}

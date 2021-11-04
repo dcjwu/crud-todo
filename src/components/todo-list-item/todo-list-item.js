@@ -9,7 +9,8 @@ const TodoListItem = ({text, completed, completeItem, deleteItem}) => {
 
     return (
         <div className={classNames}>
-            <p className="todo-text">{text}</p>
+            {/*<p className="todo-text">{text}</p>*/}
+            <input type="text" className="todo-text" defaultValue={text}/>
             <div className='todo-list-btns'>
                 <button
                     className='todo-list-btn green'
